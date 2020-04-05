@@ -1,0 +1,8 @@
+lib
+bin
+__pycache__/
+instance/
+.webassets-cache
+.vscode
+.DS_Store
+project/.env
