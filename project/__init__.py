@@ -9,15 +9,22 @@ def create_app():
 
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_ECHO'] = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/trackerdb'
     app.config['SECRET_KEY'] = 'myultimatefitnesstrackersecretkey'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.trackerdb'
+    #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/trackerdb'
     
     db.init_app(app)
 
-    # with app.app_context():
-    #     db.create_all()
-
     login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
+
+    from .models import User
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
+
 
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
