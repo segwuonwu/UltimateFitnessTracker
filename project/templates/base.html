@@ -21,6 +21,12 @@
                             <a href="{{ url_for('main.index') }}" class="navbar-item">
                                 Home
                             </a>
+                            <a href="{{ url_for('main.exercise') }}" class="navbar-item">
+                                Exercises
+                            </a>
+                            <a href="{{ url_for('main.workout') }}" class="navbar-item">
+                                Workouts
+                            </a>
                             {% if current_user.is_authenticated %}
                             <a href="{{ url_for('main.profile') }}" class="navbar-item">
                                 Profile
