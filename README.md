@@ -33,7 +33,7 @@ link description here
 ### Routes
 Action | Method | Function Name | Path |
 |------|--------|---------------|------|
-|Index | GET |  | index()|  /index |
+|Index | GET | index()|  /index |
 |Profile | GET | profile()|/profile |
 |Auth Login | GET, POST |login()|/login|
 |Auth signup | GET, POST |signup()|/sigup|
