@@ -33,7 +33,11 @@ link description here
 ### Routes
 Action | Method | Function Name | Path |
 |------|--------|---------------|------|
-|Index | GET |  | |
-|Create*|POST | | |
-|Update | PUT |  | |
-|Delete| DELETE | | |
+|Index | GET | index()|  /index |
+|Profile | GET | profile()|/profile |
+|Auth Login | GET, POST |login()|/login|
+|Auth signup | GET, POST |signup()|/sigup|
+|Create*|POST | workouts() | /workout|
+|update profile | PUT | edit_profile()|/profile/edit |
+|Update workout | PUT | edit_workout() |workout/<int:id> |
+|Delete| DELETE |delete_workout() |workout/<int:id> |
