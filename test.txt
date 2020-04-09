@@ -1,0 +1,108 @@
+export FLASK_ENV=development
+export FLASK_APP=project
+export FLASK_DEBUG=1    
+flask run
+
+
+from project import db, create_app
+db.create_all(app=create_app())
+
+from project import db, create_app
+app = create_app()
+app.app_context().push()
+from project.models import Equipment
+from project.models import Exercise
+from project.models import Workout
+db.session.add(Equipment(
+    name="Dumbell",
+    exercise_id=Exercise.query.filter_by(name="Bicep curls with dumbell").one().id,
+    exercise_id=Exercise.query.filter_by(name="Dumbell Bench Press").one().id
+))
+db.session.add(Equipment(
+    name="Barbell",
+    exercise_id=Exercise.query.filter_by(name="Barbell Triceps Extension").one().id
+))
+db.session.add(Equipment(
+    name="Bench",
+    exercise_id=Exercise.query.filter_by(name="Bench Press").one().id
+))
+db.session.add(Equipment(
+    name="Kettlebell",
+    exercise_id=Exercise.query.filter_by(name="Kettlebell Swings").one().id,
+))
+db.session.add(Equipment(
+    name="SZ-Bar",
+    exercise_id=Exercise.query.filter_by(name="Bicep curls with SZ-Bar").one().id,
+))
+db.session.add(Equipment(
+    name="Incline Bench"
+))
+db.session.add(Equipment(
+    name="Pull-up bar"
+))
+
+db.session.add(Exercise(
+    name="Bicep curls with dumbell",
+    description="Hold the Dumbell shoulder-wide, Without pausing, let down the dumbbells with a slow and controlled movement.",
+    muscles="Biceps",
+    workout_id=Workout.query.filter_by(name="Arm day").one().id
+))
+db.session.add(Exercise(
+    name="Bicep curls with SZ-Bar",
+    description="Hold the Dumbell shoulder-wide, Without pausing, let down the bar with a slow and controlled movement.",
+    muscles="Biceps",
+    workout_id=Workout.query.filter_by(name="Arm day").one().id
+))
+db.session.add(Exercise(
+    name="Barbell Triceps Extension",
+    description="Position barbell overhead with narrow overhand grip. Lower forearm behind upper arm with elbows remaining overhead. Extend forearm overhead. Lower and repeat.",
+    muscles="Triceps",
+    workout_id=Workout.query.filter_by(name="Arm day").one().id
+))
+
+db.session.add(Exercise(
+    name="Dumbell Bench Press",
+    description="Hold two dumbbells and lay down on a bench. Hold the weights next to the chest, at the height of your nipples and press them up till the arms are stretched. Let the weight slowly and controlled down.",
+    muscles="Chest",
+    workout_id=Workout.query.filter_by(name="Chest day").one().id
+))
+db.session.add(Exercise(
+    name="Barbell Hark Squarts",
+    description="Perform leg squats with barbell behind your legs",
+    muscles="Legs",
+    workout_id=Workout.query.filter_by(name="Leg day").one().id
+))
+
+db.session.add(Exercise(
+    name="Kettlebell Swings",
+    description="Hold the kettlebell securely in both hands. Keep your back flat throughout the move, avoiding any rounding of the spine Keeping your knees 'soft', hinge your hips backwards, letting the kettlebell swing between your knees.",
+    muscles="Legs and Abs",
+    workout_id=Workout.query.filter_by(name="Leg day").one().id
+))
+
+db.session.add(Exercise(
+    name="Bench Press",
+    description="Lay down on a bench, the bar should be directly above your eyes. Bring the bar slowly down till it briefly touches your chest at the height of your nipples. Push the bar up.",
+    muscles="Chest",
+    workout_id=Workout.query.filter_by(name="Chest day").one().id
+))
+
+db.session.add(Workout(
+    name="Arm day",
+    day="Monday",
+    sets="5 sets",
+    reps="5 reps"
+))
+db.session.add(Workout(
+    name="Leg day",
+    day="Tusday",
+    sets="5 sets",
+    reps="5 reps"
+))
+db.session.add(Workout(
+    name="Chest day",
+    day="Wednesday",
+    sets="5 sets",
+    reps="5 reps"
+))
+db.session.commit()

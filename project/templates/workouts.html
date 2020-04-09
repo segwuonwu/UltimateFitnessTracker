@@ -1,7 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  workout
-</h1>
+<div>
+</div>
+<dev>
+  <form action="/workouts" method="POST">
+    <input type="text" placeholder="workout name" name='name'>
+    <input type="text" placeholder="day" name="name">
+    <input type="text" placeholder="sets" name="sets">
+    <input type="text" placeholder="reps" name="reps">
+    <input type="text" placeholder="exercise" name="exercise">
+    <input type="submit" value="Submit">
+  </form>
+  <div>
+    <h1 class="title">
+      workouts
+    </h1>
+  </div>
+  {% for workout in workout_list %}
+  <div>{{workout.day}}</div>
+  <div>{{workout.name}}</div>
+  <div>{{workout.sets}}</div>
+  <div>{{workout.reps}}</div>
+  <div>
+    {% for x in workout.exercises %}
+      <div>{{x.name}}</div>
+      <div>{{x.muscles}}</div>
+      <div>
+        {% for i in x.equipments %}
+        <div>{{i.name}}</div>
+        {% endfor %}
+      </div>
+      <div>{{x.description}}</div>
+    {% endfor %}
+  </div>
+  <br>
+  {% endfor %}
+</dev>
 {% endblock %}

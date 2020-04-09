@@ -4,4 +4,18 @@
 <h1 class="title">
   Exercises
 </h1>
+<div>
+  {% for exercise in e_list %}
+  <div>{{exercise.name}}</div>
+  <div>{{exercise.muscles}}</div>
+  <div>
+    {% for x in exercise.equipments %}
+    <div>{{x.name}}</div>
+    {% endfor %}
+  </div>
+  <div>{{exercise.description}}</div>
+  <br>
+  {% endfor %}
+</dev>
+</div>
 {% endblock %}
