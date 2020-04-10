@@ -1,1 +1,1 @@
-web: Flask-SQLAlchemy api:app
+web: gunicorn api:app

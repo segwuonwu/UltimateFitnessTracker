@@ -1,0 +1,14 @@
+README.md
+setup.py
+UltimateFitnessTracker.egg-info/PKG-INFO
+UltimateFitnessTracker.egg-info/SOURCES.txt
+UltimateFitnessTracker.egg-info/dependency_links.txt
+UltimateFitnessTracker.egg-info/requires.txt
+UltimateFitnessTracker.egg-info/top_level.txt
+project/__init__.py
+project/auth.py
+project/equipment_crud.py
+project/exercise_crud.py
+project/main.py
+project/models.py
+project/workout_crud.py
