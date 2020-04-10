@@ -95,7 +95,7 @@ db.session.add(Workout(
 ))
 db.session.add(Workout(
     name="Leg day",
-    day="Tusday",
+    day="Tuesday",
     sets="5 sets",
     reps="5 reps"
 ))

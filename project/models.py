@@ -23,7 +23,7 @@ class Exercise(db.Model):
     equipments = db.relationship('Equipment', backref='equipment_name')
 
     def __repr__(self):
-        return f'Exercise(id={self.id}, name="{self.name}", description="{self.description}", muscles="{self.muscles}", equipments="{self.equipments}")'
+        return f'Exercise(id={self.id}, name="{self.name}", description="{self.description}", muscles="{self.muscles}")'
 
     def as_dict(self):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
@@ -52,7 +52,7 @@ class Workout(db.Model):
     exercises = db.relationship('Exercise', backref='workout_exercise')
 
     def __repr__(self):
-        return f'Workout(id={self.id}, name="{self.name}", day="{self.day}", sets="{self.sets}", reps="{self.reps}, exercise="self.exercises")'
+        return f'Workout(id={self.id}, name="{self.name}", day="{self.day}", sets="{self.sets}", reps="{self.reps})'
     
     def as_dict(self):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}

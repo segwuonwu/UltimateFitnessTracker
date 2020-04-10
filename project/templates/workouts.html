@@ -2,16 +2,19 @@
 
 {% block content %}
 <div>
+  <h1 class="title">
+    Add new workout
+  </h1>
 </div>
 <dev>
-  <form action="/workouts" method="POST">
-    <input type="text" placeholder="workout name" name='name'>
-    <input type="text" placeholder="day" name="name">
-    <input type="text" placeholder="sets" name="sets">
-    <input type="text" placeholder="reps" name="reps">
-    <input type="text" placeholder="exercise" name="exercise">
-    <input type="submit" value="Submit">
+  <form method="POST">
+    <input type="text" placeholder="workout name" name='name' value="{{ request.form['name'] }}" required>
+    <input type="text" placeholder="day" name="day" value="{{ request.form['day'] }}" required>
+    <input type="text" placeholder="sets" name="sets" value="{{ request.form['sets'] }}" required>
+    <input type="text" placeholder="reps" name="reps" value="{{ request.form['reps'] }}" required>
+    <input type="submit" value="Save">
   </form>
+  <br>
   <div>
     <h1 class="title">
       workouts

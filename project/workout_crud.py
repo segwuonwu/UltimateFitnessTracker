@@ -1,4 +1,4 @@
-from flask import render_template , jsonify, request, json
+from flask import render_template , jsonify, request, json, redirect
 from .models import Exercise, Equipment, Workout
 from . import db
 
@@ -7,23 +7,13 @@ def get_workout():
     results = [workout.as_dict() for workout in workout_list]
     return render_template('workouts.html', workout_list=workout_list)
 
-def create_workout(**form_kwargs):
-    new_workout = Workout(**form_kwargs)
-    db.session.add(new_workout)
+def create_workout():
+    db.session.add(Workout(
+    name=request.form['name'],
+    day=request.form['day'],
+    sets=request.form['sets'],
+    reps=request.form['reps']
+    ))
     db.session.commit()
-    return render_template('workouts.html', new_workout=new_workout)
+    return redirect('workouts.html')
 
-# def workout():
-#     if request.method == 'GET':
-#         pass
-#     if request.method == 'POST':
-#         name = request.form.get('name')
-#         day = request.form.get('day')
-#         sets = request.form.get('sets')
-#         reps = request.form.get('reps')
-#         exercise_id = request.form.get('exercise_id')
-    
-#     workouts = get_workout()
-
-#     return render_template('workouts.html', workouts=workouts)
-    

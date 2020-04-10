@@ -7,3 +7,4 @@ instance/
 .DS_Store
 project/.env
 .env
+node_modules

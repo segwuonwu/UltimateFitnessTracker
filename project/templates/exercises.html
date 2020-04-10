@@ -1,10 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  Exercises
-</h1>
 <div>
+  <h1 class="title">
+    Add new exercise
+  </h1>
+</div>
+<div>
+  <form method="POST">
+    <input type="text" placeholder="name" name='name' value="{{ request.form['name'] }}" required>
+    <input type="text" placeholder="muscle" name="muscles" value="{{ request.form['muscles'] }}" required>
+    <input type="text" placeholder="description" name="description" value="{{ request.form['description'] }}" required>
+    <input type="text" placeholder="workout name" name="workout" value="{{ request.form['workout'] }}" >
+    <input type="submit" value="Save">
+  </form>
+  <br>
+  <div><h1 class="title">Exercises</h1></div>
   {% for exercise in e_list %}
   <div>{{exercise.name}}</div>
   <div>{{exercise.muscles}}</div>

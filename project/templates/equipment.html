@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+  <h1 class="title">
+    Add new equipment
+  </h1>
+</div>
+<div>
+  <form method="POST">
+    <input name="name" id="name" placeholder="Enter equipment" value="{{ request.form['name'] }}" required>
+    <input name="exercise" id="name" placeholder="Exercise" value="{{ request.form['exercise'] }}" required>
+    <input type="submit" value="Save">
+  </form>
+  <br>
+  <div>
+    <h1 class="title">Equipments</h1>
+  </div>
+  {% for item in equip_list %}
+  <div>{{item.name}}</div>
+  {% endfor %}
+</dev>
+</div>
+{% endblock %}
