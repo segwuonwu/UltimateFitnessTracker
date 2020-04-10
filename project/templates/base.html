@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Ultimate Fitness Tracker</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+      <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ultimate Fitness Tracker</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-</head>
+  </head>
 
-<nav class="navbar is-link" role="navigation" aria-label="main navigation">
-    <div class="container has-text-centered">
-      <h1 class="title has-text-grey-lighter">Ultimate Fitness Tracker</h1>
-    </div>
-</nav>
-<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+      <div class="container has-text-centered">
+        <h1 class="title has-text-grey-lighter">Ultimate Fitness Tracker</h1>
+      </div>
+  </nav>
+  <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
@@ -74,17 +76,17 @@
     </div>
   </nav>
 
-<body>
-    <section class="hero is-primary is-fullheight">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                {% block header %}
-                {% endblock %}
-                {% block content %}
-                {% endblock %}
-            </div>
-        </div>
-    </section>
-</body>
+  <body>
+      <section class="hero index is-fullheight">
+          <div class="index">
+              <div class="container has-text-centered"></div>
+                  {% block header %}
+                  {% endblock %}
+                  {% block content %}
+                  {% endblock %}
+              </div>
+          </div>
+      </section>
+  </body>
 
 </html>

@@ -2,7 +2,7 @@ from flask import Blueprint, render_template , jsonify, request, json
 from flask_login import login_required, current_user
 from . import db
 from .models import Exercise, Equipment, Workout
-from .workout_crud import get_workout, create_workout
+from .workout_crud import get_workout, create_workout, show_workout
 from .exercise_crud import exercise, add_exercise
 from .equipment_crud import equipment, create_equipment
 
@@ -44,3 +44,7 @@ def workouts():
     if request.method == 'POST':
         return create_workout()
 
+@main.route('/profile/day')
+# @login_required
+def profile_workouk():
+    return show_workout()

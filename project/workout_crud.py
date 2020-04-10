@@ -17,3 +17,8 @@ def create_workout():
     db.session.commit()
     return redirect('workouts.html')
 
+def show_workout():
+    workout_list = Workout.query.all()
+    results = [workout.as_dict() for workout in workout_list]
+    return render_template('profile.html', workout_list=workout_list)
+
