@@ -20,5 +20,5 @@ def create_workout():
 def show_workout():
     workout_list = Workout.query.all()
     results = [workout.as_dict() for workout in workout_list]
-    return render_template('profile.html', workout_list=workout_list)
+    return render_template('workouts.html', workout_list=workout_list)
 

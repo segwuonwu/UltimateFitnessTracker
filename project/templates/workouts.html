@@ -17,25 +17,31 @@
   <br>
   <div>
     <h1 class="title">
-      workouts
+      Workouts
     </h1>
   </div>
   {% for workout in workout_list %}
-  <div>{{workout.day}}</div>
-  <div>{{workout.name}}</div>
-  <div>{{workout.sets}}</div>
-  <div>{{workout.reps}}</div>
-  <div>
-    {% for x in workout.exercises %}
-      <div>{{x.name}}</div>
-      <div>{{x.muscles}}</div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5>{{workout.day}}</h5>
+      <h6>{{workout.name}}</h6>
+      <h6>{{workout.sets}}</h6>
+      <h6>{{workout.reps}}</h6>
+      <hr>
       <div>
-        {% for i in x.equipments %}
-        <div>{{i.name}}</div>
+        {% for x in workout.exercises %}
+          <h6>Exercise: {{x.name}}</h6>
+          <h6>Muscle: {{x.muscles}}</h6>
+          <div>
+            {% for i in x.equipments %}
+            <h6>Equipment: {{i.name}}</h6>
+            {% endfor %}
+          </div>
+          <h6>Detail: </h6><p>{{x.description}}</p>
+          <hr>
         {% endfor %}
       </div>
-      <div>{{x.description}}</div>
-    {% endfor %}
+    </div>
   </div>
   <br>
   {% endfor %}

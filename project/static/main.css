@@ -1,0 +1,23 @@
+body {
+  width: 100%;
+  height: 100%;
+  color: aquamarine;
+}
+.bg-img { 
+  background-image: url(img/main-background.jpg) ;
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  background-size:  cover;
+  background-color: #999;
+
+}
+
+.img-responsive {
+  display: block; 
+  max-width: 100%;
+  height: auto;
+} 
+
+/* <img class="img-responsive" src="demo.jpg"/> */
+

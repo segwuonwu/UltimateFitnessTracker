@@ -44,7 +44,7 @@ def workouts():
     if request.method == 'POST':
         return create_workout()
 
-@main.route('/profile/day')
+@main.route('/profile')
 # @login_required
-def profile_workouk():
+def profile_workout():
     return show_workout()
