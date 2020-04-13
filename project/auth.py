@@ -24,7 +24,7 @@ def login_post():
 
     login_user(user, remember=remember)
 
-    return redirect(url_for('main.profile'))
+    return redirect(url_for('main.workouts'))
 
 @auth.route('/signup')
 def signup():
@@ -47,7 +47,7 @@ def signup_post():
     db.session.add(new_user)
     db.session.commit()
 
-    return redirect(url_for('main.profile'))
+    return redirect(url_for('main.workouts'))
 
 @auth.route('/logout')
 @login_required

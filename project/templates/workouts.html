@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h1 class="title has-text-centered">
+  Welcome, {{ name }}
+</h1>
+<br>
 <div>
-  <h1 class="title">
+  <h4>
     Add new workout
-  </h1>
+  </h4>
 </div>
 <dev>
   <form method="POST">
@@ -23,24 +27,24 @@
   {% for workout in workout_list %}
   <div class="card has-background-grey-light" style="width: 35rem;">
     <div class="card-body">
-      <form action=""></form>
-      <h5><a class="mr-2" href="{{ url_for('main.day') }}">{{workout.day}}</a></h5>
-      <h6>{{workout.name}}</h6>
-      <h6>{{workout.sets}}</h6>
-      <h6>{{workout.reps}}</h6>
-      <hr>
-      <div>
+        <h5>{{workout.day}}</h5>
+        <h6>{{workout.name}}</h6>
+        <h6>{{workout.sets}}</h6>
+        <h6>{{workout.reps}}</h6>
+        <hr>
+        <div>
         {% for x in workout.exercises %}
           <h6>Exercise: {{x.name}}</h6>
           <h6>Muscle: {{x.muscles}}</h6>
           <div>
             {% for i in x.equipments %}
-            <h6>Equipment: {{i.name}}</h6>
+              <h6>Equipment: {{i.name}}</h6>
             {% endfor %}
           </div>
           <h6>Detail: </h6><p>{{x.description}}</p>
           <hr>
         {% endfor %}
+        <a href="#/update"><input value="Edit workout" type="button" ></a>
       </div>
     </div>
   </div>

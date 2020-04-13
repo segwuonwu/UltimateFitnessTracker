@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title has-text-centered">
+  Update {{workout.name}}
+</h1>
+<div class="field">
+  <label class="label is-medium">Medium input</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-medium" type="email" placeholder="Extra small">
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope fa-xs"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-check fa-xs"></i>
+    </span>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-medium" type="email" placeholder="Small">
+    <span class="icon is-left">
+      <i class="fas fa-envelope fa-sm"></i>
+    </span>
+    <span class="icon is-right">
+      <i class="fas fa-check fa-sm"></i>
+    </span>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-medium" type="email" placeholder="Normal">
+    <span class="icon is-medium is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+    <span class="icon is-medium is-right">
+      <i class="fas fa-check"></i>
+    </span>
+  </div>
+</div>
+
+{% endblock %}
