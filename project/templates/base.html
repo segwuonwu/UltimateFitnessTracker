@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Ultimate Fitness Planner</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-      <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
 
@@ -38,12 +38,12 @@
             </div>
           </div>
           {% if current_user.is_authenticated %}
-          <a href="{{ url_for('main.workouts') }}" class="navbar-item">
-              Workouts
-          </a>
-          <a href="{{ url_for('main.profile') }}" class="navbar-item">
-              Profile
-          </a>
+            <a href="{{ url_for('main.workouts') }}" class="navbar-item">
+                Workouts
+            </a>
+            <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                Profile
+            </a>
           {% endif %}
         </div>
     
@@ -59,9 +59,9 @@
               </a>
               {% endif %}
               {% if current_user.is_authenticated %}
-              <a class="button is-light" href="{{ url_for('auth.logout') }}">
-                  Logout
-              </a>
+                <a class="button is-light" href="{{ url_for('auth.logout') }}">
+                    Logout
+                </a>
               {% endif %}
             </div>
           </div>
@@ -71,10 +71,8 @@
  
     <section class="hero">
         <div class="hero-body">
-            <div class="">
-                {% block content %}
-                
-                {% endblock %}
+            <div class="container">
+                {% block content %}{% endblock %}
             </div>
         </div>
     </section>

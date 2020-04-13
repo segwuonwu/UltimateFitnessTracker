@@ -17,8 +17,16 @@ def create_workout():
     db.session.commit()
     return redirect('workouts.html')
 
-def show_workout():
-    workout_list = Workout.query.all()
-    results = [workout.as_dict() for workout in workout_list]
-    return render_template('workouts.html', workout_list=workout_list)
+def sunday():
+    work = Workout.query.all()
+    if work:
+        results = [workout.as_dict() for workout in work]
+        return render_template('profile.html', work=results)
+    else:
+        raise Exception('No workout found')
+
+def update_workout():
+    print(request.form)
+    return redirect('workouts.html')
+
 

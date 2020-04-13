@@ -2,9 +2,9 @@ from flask import Blueprint, render_template , jsonify, request, json
 from flask_login import login_required, current_user
 from . import db
 from .models import Exercise, Equipment, Workout
-from .workout_crud import get_workout, create_workout, show_workout
+from .workout_crud import get_workout, create_workout, sunday, update_workout
 from .exercise_crud import exercise, add_exercise
-from .equipment_crud import equipment, create_equipment
+from .equipment_crud import equipment, create_equipment, delete_equipment
 
 import requests
 
@@ -46,5 +46,14 @@ def workouts():
 
 @main.route('/profile')
 # @login_required
-def profile_workout():
-    return show_workout()
+def day():
+    return sunday()
+
+@main.route('/workouts/<update>', methods=['PUT'])
+def update():
+    return update_workout()
+
+@main.route('/equipments/<int:id>', methods=['DELETE'])
+def delete(id):
+    if request.method == 'DELETE':
+        return delete_equipment(id)

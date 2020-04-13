@@ -15,3 +15,13 @@ def create_equipment():
     db.session.commit()
     return redirect('equipments')
 
+def delete_equipment(id):
+    workout = equipment.query.get(id)
+    if workout:
+        db.session.delete(workout)
+        db.session.commit()
+        return redirect('equipments')
+    else:
+        raise Exception('No workout found on that {}'.format(id))
+
+

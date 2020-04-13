@@ -8,8 +8,6 @@ def exercise():
     return render_template('exercises.html', e_list=e_list)
 
 def add_exercise():
-    print(f"🍑🍑")
-    print(request.form)
     db.session.add(Exercise(
     name=request.form['name'],
     description=request.form['description'],

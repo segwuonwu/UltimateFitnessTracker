@@ -21,9 +21,10 @@
     </h1>
   </div>
   {% for workout in workout_list %}
-  <div class="card" style="width: 18rem;">
+  <div class="card has-background-grey-light" style="width: 35rem;">
     <div class="card-body">
-      <h5>{{workout.day}}</h5>
+      <form action=""></form>
+      <h5><a class="mr-2" href="{{ url_for('main.day') }}">{{workout.day}}</a></h5>
       <h6>{{workout.name}}</h6>
       <h6>{{workout.sets}}</h6>
       <h6>{{workout.reps}}</h6>
