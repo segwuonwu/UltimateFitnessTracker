@@ -10,7 +10,7 @@ def equipment():
 def create_equipment():
     db.session.add(Equipment(
         name=request.form['name'],
-        exercise_id=Exercise.query.filter_by(name=request.form['exercise']).first()
+        exercise_id=Exercise.query.filter_by(name=request.form['exercise']).first().id
     ))
     db.session.commit()
     return redirect('equipments')

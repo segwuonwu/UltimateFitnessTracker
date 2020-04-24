@@ -12,8 +12,8 @@
 </div>
 <dev>
   <form method="POST">
-    <input type="text" placeholder="workout name" name='name' value="{{ request.form['name'] }}" required>
     <input type="text" placeholder="day" name="day" value="{{ request.form['day'] }}" required>
+    <input type="text" placeholder="workout name" name='name' value="{{ request.form['name'] }}" required>
     <input type="text" placeholder="sets" name="sets" value="{{ request.form['sets'] }}" required>
     <input type="text" placeholder="reps" name="reps" value="{{ request.form['reps'] }}" required>
     <input type="submit" value="Save">

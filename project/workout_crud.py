@@ -16,7 +16,7 @@ def create_workout():
     reps=request.form['reps']
     ))
     db.session.commit()
-    return redirect('workouts.html')
+    return redirect('workouts')
 
 def update_workout():
     return render_template('update.html')
